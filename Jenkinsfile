@@ -1,4 +1,4 @@
-pipeline {
+ pipeline {
     agent any
     tools {
         maven "local maven"
@@ -18,7 +18,7 @@ pipeline {
                     branch: 'main',
                     credentialsId: '2c97cb71-1aca-415b-851c-5a96840c8f52'
             }
-        } 
+        
         stage('Build') {
             steps {
                 bat 'mvn -B -DskipTests clean package' 
