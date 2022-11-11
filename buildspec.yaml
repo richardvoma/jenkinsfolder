@@ -1,5 +1,10 @@
-version: 0.0
-os: linux
-files:
-  - source: ./my-app-1.0-SNAPSHOT.jar
-    destination: /tmp
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+  build:
+    commands:
+      - echo Build completed on `date`
+      - mvn -B -DskipTests clean package
